@@ -1,0 +1,12 @@
+# This project is made using resources in Azure cloud 
+# The Azure CLI is a robust utility to fetch and query meta data of resources as we like
+
+az group list --query [].name --output table
+# lists all resource groups in the form of table
+
+az group list --query [2]."{name_of_rg:name,region:location}" --output table
+# Outputs the resource group at second index with its location.
+
+Name                              Location
+--------------------------------  ------------
+cloud-shell-storage-centralindia  centralindia
